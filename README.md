@@ -1,6 +1,9 @@
 # QBittorrent Space Monitor
 
-This Docker container contains a python script that will check the remaining space and resume downloads if sufficient space is available.
+This Docker container contains a python script that will manage qbittorrent downloads when space is limited.
+
+##Note:
+Be sure to set all new downloads to pause when added.
 
 # Docker Compose Example
 Using **Ofelia** to schedule a check every 15mins
