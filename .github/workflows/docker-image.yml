@@ -51,7 +51,7 @@ jobs:
       uses: docker/metadata-action@v4
       with:
         images: |
-          ghcr.io/${{ env.OWNER_LC }}/rtfm
+          ghcr.io/${{ env.OWNER_LC }}/${{ env.IMAGE_NAME }}
         tags: |
           type=raw,value=build
         flavor: |
@@ -108,7 +108,7 @@ jobs:
     - run: podman manifest create ghcr.io/${{ env.OWNER_LC }}/${{ env.IMAGE_NAME }}:manifest
     - run: podman manifest add ghcr.io/${{ env.OWNER_LC }}/${{ env.IMAGE_NAME }}:manifest oci-archive:/tmp/arm64-oci.tar
     - run: podman manifest add ghcr.io/${{ env.OWNER_LC }}/${{ env.IMAGE_NAME }}:manifest oci-archive:/tmp/amd64-oci.tar
-    # - run: podman manifest inspect ghcr.io/${{ env.OWNER_LC }}/rtfm:manifest
+    # - run: podman manifest inspect ghcr.io/${{ env.OWNER_LC }}/${{ env.IMAGE_NAME }}:manifest
 
     - name: Container meta
       id: meta
